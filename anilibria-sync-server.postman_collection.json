@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "5aa07799-44d4-4ec3-bc21-b82e68596f8f",
+		"name": "anilibria-sync-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12530209"
+	},
+	"item": [
+		{
+			"name": "Get snapshot",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-endpoint}}/snapshot/63e2819109a724d3b7daa034",
+					"host": [
+						"{{api-endpoint}}"
+					],
+					"path": [
+						"snapshot",
+						"63e2819109a724d3b7daa034"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get snapshots",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-endpoint}}/snapshot",
+					"host": [
+						"{{api-endpoint}}"
+					],
+					"path": [
+						"snapshot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create snapshot",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"watched\": [{\n    \"releaseId\": 111,\n    \"episodes\": [{\n      \"percentage\": 100,\n      \"episode\": 2,\n      \"isSeen\": true,\n      \"timestamp\": 123\n    }]\n  }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api-endpoint}}/snapshot",
+					"host": [
+						"{{api-endpoint}}"
+					],
+					"path": [
+						"snapshot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove snapshot",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api-endpoint}}/snapshot/63e2819109a724d3b7daa034",
+					"host": [
+						"{{api-endpoint}}"
+					],
+					"path": [
+						"snapshot",
+						"63e2819109a724d3b7daa034"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "x-session",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{session}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "session",
+			"value": "test",
+			"type": "string"
+		},
+		{
+			"key": "api-endpoint",
+			"value": "https://anilibria-api.animehaze.me/api/v1",
+			"type": "string"
+		}
+	]
+}
