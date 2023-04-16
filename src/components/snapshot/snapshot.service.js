@@ -18,10 +18,11 @@ class SnapshotService {
     })
   }
 
-  async add (ownerId, watched) {
+  async add (ownerId, watched, settings) {
     const [doc] = await this[snapshotModel].insertMany({
       owner: ownerId,
-      watched
+      watched,
+      settings
     })
 
     return doc

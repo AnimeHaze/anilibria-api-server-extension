@@ -4,7 +4,7 @@ async function createSnapshot (req, reply) {
   const snapshotService = req.diScope.resolve('snapshotService')
 
   const { _id } = req.locals.user
-  const { watched } = req.body
+  const { watched, settings } = req.body
 
   const snapshot = await snapshotService.add(_id, watched, settings)
 

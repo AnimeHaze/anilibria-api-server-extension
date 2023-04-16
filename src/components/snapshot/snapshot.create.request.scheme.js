@@ -45,3 +45,4 @@ const createSnapshotScheme = {
 }
 
 module.exports = { createSnapshotScheme }
+

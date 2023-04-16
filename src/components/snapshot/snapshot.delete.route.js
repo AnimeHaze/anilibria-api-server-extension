@@ -13,7 +13,6 @@ async function delSnapshot (req, reply) {
       .send({
         success: false, error: 'Snapshot to remove not found'
       })
-    return
   }
 
   reply

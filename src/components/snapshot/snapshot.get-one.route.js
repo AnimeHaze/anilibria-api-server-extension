@@ -13,7 +13,6 @@ async function getSnapshot (req, reply) {
       .send({
         success: false, error: 'Snapshot not found'
       })
-      return
   }
 
   reply
